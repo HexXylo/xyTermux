@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-#/data/data/com.termux/files/usr/bin/env bash
 
 # Author : HexXylo
-# GitHub : https://github.com/xshin404
+# GitHub : https://github.com/HexXylo/xyTermux
 
 RED="\e[91m"
 YELLOW="\e[93m"
 GREEN="\e[92m"
+PURPLE="\e[38;5;62m"
 DEFAULT="\e[39m"
 
-user="xshin"
-pass="xshin"
+user="xytermux"
+pass="xytermux"
 
 handle_ctrl_c() {
 
@@ -30,13 +30,11 @@ clear
 while true; do
 
     echo -e ""
-    echo -e "Welcome to Termux!\n"
-    # echo -e "━━━━━━━━━━━━━━\n"
+    echo -e "${PURPLE}Welcome to xyTermux!${DEFAULT}\n"
     read -p "Username: " username
 
     if [[ "$username" == "$user" ]]; then
 
-      # Show password *
       unset password
 
       prompt="Password: "
@@ -59,35 +57,6 @@ while true; do
         sleep 2s
         clear
       fi
-
-      # Hidden Password
-  #      echo -n "Password: "
-  #      read -s -r password
-
-  #      if [[ "$password" == "$pass" ]]; then
-           
-  #          echo -e ""
-  #          echo -e "\nStatus:$GREEN Success Login.$DEFAULT"
-  #          sleep 2s
-  #          clear
-
-            # if [ ! -d ~/.scripts/pid ]; then
-
-            #     mkdir ~/.scripts/pid
-
-            # fi
-
-            # echo $$ >> ~/.scripts/pid/login
-  #          break
-
-  #      else
-
-  #          echo -e ""
-  #          echo -e "status   :$RED Wrong Password.$DEFAULT"
-  #          sleep 2s
-  #          clear
-
-  #      fi
 
     else
 
