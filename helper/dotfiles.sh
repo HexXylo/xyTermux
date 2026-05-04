@@ -33,7 +33,7 @@ function dotFiles() {
 
   for DOTFILE in "${DOTFILES[@]}"; do
 
-    FOLDER_SIZE=$(du -s -h $DOTFILE | awk '{print $1}')
+    FOLDER_SIZE=$(du -s -h $DOTFILE 2>/dev/null | awk '{print $1}')
     printf  "    ┃        ${COLOR_SUCCESS}%-12s${COLOR_BASED}              ${COLOR_WARNING}%5s${COLOR_BASED}        ┃\n" $DOTFILE $FOLDER_SIZE
     echo -e "    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
 
@@ -54,23 +54,25 @@ function backupDotFiles() {
     start_animation "       Backup ${COLOR_WARNING}'${COLOR_SUCCESS}${BACKUP_DOTFILE}${COLOR_WARNING}'${COLOR_BASED} ..."
     sleep 1s
 
+    # If file/folder exists, back it up; if not, skip (still SUCCESS)
     if [[ -d "$HOME/$BACKUP_DOTFILE" || -f "$HOME/$BACKUP_DOTFILE" ]]; then
 
-      mv ${HOME}/${BACKUP_DOTFILE} ${HOME}/${BACKUP_DOTFILE}.$(date +%Y.%m.%d-%H.%M.%S).backup
+      # Capture timestamp ONCE so both mv and check use same value
+      TIMESTAMP=$(date +%Y.%m.%d-%H.%M.%S)
+      BACKUP_PATH="${HOME}/${BACKUP_DOTFILE}.${TIMESTAMP}.backup"
 
-      if [[ -d ${HOME}/${BACKUP_DOTFILE}.$(date +%Y.%m.%d-%H.%M.%S).backup || -f ${HOME}/${BACKUP_DOTFILE}.$(date +%Y.%m.%d-%H.%M.%S).backup ]]; then
+      mv "${HOME}/${BACKUP_DOTFILE}" "${BACKUP_PATH}"
 
-        stop_animation $? || exit 1
-
+      if [[ -d "${BACKUP_PATH}" || -f "${BACKUP_PATH}" ]]; then
+        stop_animation 0 || exit 1
       else
-
-        stop_animation $?
-
+        stop_animation 1
       fi
 
     else
 
-      stop_animation $?
+      # Doesn't exist — nothing to backup, treat as SUCCESS
+      stop_animation 0
 
     fi
 
