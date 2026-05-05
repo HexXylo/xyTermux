@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 
-# Author : HexXylo
-# GitHub : https://github.com/HexXylo/xyTermux
+# xylo — Login Screen
 
+PURPLE="\e[95m"
+LPURPLE="\e[35m"
 RED="\e[91m"
 YELLOW="\e[93m"
 GREEN="\e[92m"
-PURPLE="\e[38;5;62m"
 DEFAULT="\e[39m"
+RESET="\033[0m"
+BOLD="\033[1m"
 
-user="xytermux"
-pass="xytermux"
+user="xylo"
+pass="xylo"
 
 handle_ctrl_c() {
 
-        pkill com.termux
+  pkill com.termux
 
-        echo -e "\n\nERROR    :$RED Oops, you can't exit!$DEFAULT\n"
-        echo -e "             Message"
-        echo -e "             ━━━━━━━"
-        echo -e "$YELLOW   Press Enter to back Login or"
-        echo -e "   Enter username / password to\n   continue.$DEFAULT"
+  echo -e "\n\n  ${RED}✘  Oops, you can't exit!${DEFAULT}\n"
+  echo -e "  ${PURPLE}─────────────────────────${DEFAULT}"
+  echo -e "  ${YELLOW}Press Enter to return to login,${DEFAULT}"
+  echo -e "  ${YELLOW}or enter credentials to continue.${DEFAULT}\n"
 
 }
 
@@ -29,42 +30,46 @@ trap "handle_ctrl_c" 2
 clear
 while true; do
 
-    echo -e ""
-    echo -e "${PURPLE}Welcome to xyTermux!${DEFAULT}\n"
-    read -p "Username: " username
+  echo -e ""
+  echo -e "  ${PURPLE}╔═══════════════════════════╗${RESET}"
+  echo -e "  ${PURPLE}║${RESET}  ${BOLD}Welcome to xylo Termux${RESET}   ${PURPLE}║${RESET}"
+  echo -e "  ${PURPLE}╚═══════════════════════════╝${RESET}"
+  echo -e ""
 
-    if [[ "$username" == "$user" ]]; then
+  read -p "  Username: " username
 
-      unset password
+  if [[ "$username" == "$user" ]]; then
 
-      prompt="Password: "
-      while IFS= read -p "$prompt" -r -s -n 1 char
-      do
-          if [[ $char == $'\0' ]]; then
-            break
-          fi
-          prompt='*'
-          password+="$char"
-      done
+    unset password
 
-      if [[ $password == $pass ]]; then
-        echo -e "\n\nStatus: ${GREEN}Success Login. ${DEFAULT}"
-        sleep 2s
-        clear
+    prompt="  Password: "
+    while IFS= read -p "$prompt" -r -s -n 1 char
+    do
+      if [[ $char == $'\0' ]]; then
         break
-      else
-        echo -e "\n\nStatus: ${RED}Wrong Password. ${DEFAULT}"
-        sleep 2s
-        clear
       fi
+      prompt='*'
+      password+="$char"
+    done
 
+    if [[ $password == $pass ]]; then
+      echo -e "\n\n  ${GREEN}✔  Login successful.${DEFAULT}"
+      sleep 1s
+      clear
+      break
     else
-
-        echo -e ""
-        echo -e "Status: $YELLOW Wrong Username.$DEFAULT"
-        sleep 2s
-        clear
-
+      echo -e "\n\n  ${RED}✘  Wrong password.${DEFAULT}"
+      sleep 1s
+      clear
     fi
+
+  else
+
+    echo -e ""
+    echo -e "  ${YELLOW}✘  Wrong username.${DEFAULT}"
+    sleep 1s
+    clear
+
+  fi
 
 done

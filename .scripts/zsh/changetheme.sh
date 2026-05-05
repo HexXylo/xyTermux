@@ -14,7 +14,7 @@ ZSH_CUSTOM_THEME_DIR="${HOME}/.oh-my-zsh/custom/themes"
 GET_ZSH_THEME_USED=$(cat ${HOME}/.zshrc | grep ZSH_THEME | sed 's .\{10\}  ' | sed 's/"//g')
 INDEX_LOOP=0
 
-THEME_USED_PATH="${HOME}/.config/xytermux/zsh"
+THEME_USED_PATH="${HOME}/.config/mytermux/zsh"
 THEME_USED_FILE_NAME="used.log"
 THEME_USED="$(cat ${THEME_USED_PATH}/${THEME_USED_FILE_NAME})"
 

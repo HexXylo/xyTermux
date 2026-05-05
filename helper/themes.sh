@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ZSH_CUSTOM_THEMES=(
+  xylo.zsh-theme
   osx.zsh-theme
   osx2.zsh-theme
   ma.zsh-theme

@@ -13,7 +13,7 @@ done
 COLORSCHEMES_DIR="$HOME/.colorscheme"
 INDEX_LOOP=0
 
-THEME_USED_PATH="${HOME}/.config/xytermux/colorscheme"
+THEME_USED_PATH="${HOME}/.config/mytermux/colorscheme"
 THEME_USED_FILE_NAME="used.log"
 THEME_USED="$(cat ${THEME_USED_PATH}/${THEME_USED_FILE_NAME})"
 

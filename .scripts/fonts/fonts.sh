@@ -13,7 +13,7 @@ done
 FONTS_DIR="${HOME}/.fonts"
 INDEX_LOOP=0
 
-FONT_USED_PATH="${HOME}/.config/xytermux/fonts"
+FONT_USED_PATH="${HOME}/.config/mytermux/fonts"
 FONT_USED_FILE_NAME="used.log"
 FONT_USED="$(cat ${FONT_USED_PATH}/${FONT_USED_FILE_NAME})"
 

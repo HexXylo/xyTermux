@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/env bash
 
 # Author : HexXylo
-# GitHub : https://github.com/xshin404
+# GitHub : https://github.com/HexXylo
 
 logo=(
 
