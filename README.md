@@ -90,18 +90,6 @@ export COLUMNS LINES
 
 ---
 
-## 📸 Screenshots
-
-> Screenshots taken with [**Awesomeshot**](https://github.com/HexXylo/awesomeshot) and system fetch by [**rxfetch-termux**](https://github.com/HexXylo/rxfetch-termux)
-
-- System Fetch (rxfetch / neofetch)
-- Colorscheme — change with: `chcolor`
-- Fonts — change with: `chfont`
-- ZSH Theme — change with: `chzsh`
-- \[NVIM\] Text Editor
-- \[NCMPCPP\] Music Player
-- \[COLORTOYS\] Pipes, Panes, Bloks
-
 ---
 
 ## 🎨 Color Palette
@@ -119,7 +107,7 @@ xylo uses a signature **slate purple** palette:
 ---
 
 ## Credits
-
+- [maytermux / maytermux (https://github.com/mayTermux/myTermux) - main source
 - [HexXylo / HexXylo](https://github.com/HexXylo) — xyTermux project
 - [siduck](https://github.com/siduck) — Neovim Setup (NvChad), Colorscheme (onedark-siduck)
 - [owl4ce](https://github.com/owl4ce) — Dotfiles inspiration
