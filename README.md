@@ -1,79 +1,137 @@
-<div align="center">
+<h1 align="center">xyTermux</h1>
 
-```
- ██╗  ██╗██╗   ██╗██╗      ██████╗ 
- ╚██╗██╔╝╚██╗ ██╔╝██║     ██╔═══██╗
-  ╚███╔╝  ╚████╔╝ ██║     ██║   ██║
-  ██╔██╗   ╚██╔╝  ██║     ██║   ██║
- ██╔╝ ██╗   ██║   ███████╗╚██████╔╝
- ╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ 
-          T e r m u x
-```
+<p align="center">Make your Termux look stunning — powered by <strong>xylo</strong></p>
 
-**xylo** — A sleek, purple-themed Termux configuration
-
-[![license](https://img.shields.io/badge/license-GPL--3.0-blueviolet.svg)](LICENSE)
-[![version](https://img.shields.io/badge/version-1.0.0-purple.svg)](https://github.com/HexXylo/xyTermux)
-
-</div>
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-GPL-blue.svg"></a>
+  <img src="https://img.shields.io/badge/brand-xylo-5254B3.svg">
+  <img src="https://img.shields.io/github/release/HexXylo/xyTermux.svg">
+</p>
 
 ---
 
-## Requirements
+## ✨ About xyTermux
 
-- [Termux (F-Droid)](https://f-droid.org/en/packages/com.termux/) — use F-Droid version
-- [Termux:API (F-Droid)](https://f-droid.org/en/packages/com.termux.api/) — for battery/device info
+**xyTermux** is a fully themed Termux configuration under the **xylo** brand — bringing a sleek, purple-toned aesthetic with powerful shell tooling to your Android terminal.
 
-## Installation
+> Forked and rebranded from [xyTermux](https://github.com/HexXylo/xyTermux) by HexXylo.  
+> Credits to the original authors are preserved below.
+
+---
+
+## Installation Dependencies
+
+> **Attention!**
+>
+> - [Termux must be **F-Droid** Version](https://f-droid.org/en/packages/com.termux/) — the Playstore version is no longer maintained
+> - [Termux:API must be installed](https://f-droid.org/en/packages/com.termux.api/) — xyTermux uses Termux:API commands like `termux-battery-status`
+
+  <details open>
+  <summary><strong>Update Repository & Upgrade Package</strong></summary>
 
 ```bash
-# Update packages
 pkg update && pkg upgrade
+```
 
-# Install dependencies
+  </details>
+
+  <details>
+  <summary><strong>git & bc</strong></summary>
+
+- Package `git` for cloning or downloading repository
+- Package `bc` for calculating repository size
+
+```bash
 pkg i -y git bc
+```
 
-# Clone xyTermux
+  </details>
+
+---
+
+## Installation xyTermux
+
+  <details open>
+  <summary><strong>Clone or Download This Repository</strong></summary>
+
+```bash
 git clone --depth=1 https://github.com/HexXylo/xyTermux.git
+```
 
-# Enter directory
+  </details>
+
+  <details>
+  <summary><strong>Run Script Installer</strong></summary>
+
+- Move to Folder
+
+```bash
 cd xyTermux
+```
 
-# Export terminal dimensions
+- Export variable `COLUMNS` and `LINES`
+
+> This variable allows the installer to read the column and row widths of Termux  
+> so the output matches your screen during installation.
+
+```bash
 export COLUMNS LINES
+```
 
-# Run installer
+- Execute Installer
+
+```bash
 ./install.sh
 ```
 
-> **Note:** If you see `Please Zoom Out` — zoom out in your Termux app and run again.
+> If you get the error message `Please Zoom Out` — zoom out in Termux then run the script again.
 
-## Prompt Style
+  </details>
 
-```
-┌─[XYLO✦Termux]─[~]
-└─»»» 
-```
+---
 
-## Commands
+## 📸 Screenshots
 
-| Command | Description |
-|---------|-------------|
-| `chcolor` | Switch color scheme |
-| `chfont` | Switch font |
-| `chzsh` | Switch ZSH theme |
-| `rxfetch` | Show system info (xylo style) |
+> Screenshots taken with [**Awesomeshot**](https://github.com/HexXylo/awesomeshot) and system fetch by [**rxfetch-termux**](https://github.com/HexXylo/rxfetch-termux)
 
-## Features
+- System Fetch (rxfetch / neofetch)
+- Colorscheme — change with: `chcolor`
+- Fonts — change with: `chfont`
+- ZSH Theme — change with: `chzsh`
+- \[NVIM\] Text Editor
+- \[NCMPCPP\] Music Player
+- \[COLORTOYS\] Pipes, Panes, Bloks
 
-- **Purple accent** color throughout (replaced cyan)
-- **XYLO ASCII** system fetch — no box, clean layout
-- **Custom ZSH prompt** — `┌─[XYLO✦Termux]─[~]` / `└─»»»`
-- NvChad, Oh-My-Zsh, tmux, lf, ncmpcpp, neofetch
+---
+
+## 🎨 Color Palette
+
+xylo uses a signature **slate purple** palette:
+
+| Role      | Hex       |
+|-----------|-----------|
+| Primary   | `#5254B3` |
+| Accent    | `#7B7FD4` |
+| Dark BG   | `#2E2F6E` |
+| Toast BG  | `#5254B3` |
+| Toast FG  | `#FFFFFF` |
+
+---
 
 ## Credits
 
-- [mayTermux/myTermux](https://github.com/mayTermux/myTermux) — original project
-- [owl4ce](https://github.com/owl4ce) — ZSH themes
-- [siduck](https://github.com/siduck) — NvChad
-- [adi1090x](https://github.com/adi1090x) — Termux setup inspiration
+- [HexXylo / HexXylo](https://github.com/HexXylo) — xyTermux project
+- [siduck](https://github.com/siduck) — Neovim Setup (NvChad), Colorscheme (onedark-siduck)
+- [owl4ce](https://github.com/owl4ce) — Dotfiles inspiration
+- [adi1090x](https://github.com/adi1090x) — Termux Setup
+- [bandithijo](https://github.com/bandithijo) — Awesome screenshot script
+- [lwotcynna](https://github.com/lwotcynna) — Contributor
+- [nekonako](https://github.com/nekonako) — Colorschemes
+
+## Colorscheme
+
+- [catppuccin/termux](https://github.com/catppuccin/termux)
+
+---
+
+<p align="center">Made by <a href="https://github.com/HexXylo">HexXylo</a></p>
