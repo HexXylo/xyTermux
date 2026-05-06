@@ -12,7 +12,7 @@
 
 ## ✨ About xyTermux
 
-**xyTermux** is a fully themed Termux configuration under the **xylo** brand — bringing a sleek, purple-toned aesthetic with powerful shell tooling to your Android terminal.
+**xyTermux** is a beta test theme for Termux configuration under the **xylo** — bringing a sleek, purple-toned aesthetic with shell tooling to your Android terminal.
 
 > Forked and rebranded from [xyTermux](https://github.com/HexXylo/xyTermux) by HexXylo.  
 > Credits to the original authors are preserved below.
